@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Карта Visa от кыргызского банка — ваш ключ к мировым финансам{% endblock %}
+
+{% block content %}
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">Visa Card</a>
+    <ul class="nav-links">
+      <li><a href="#benefits">Преимущества</a></li>
+      <li><a href="#process">Как получить</a></li>
+      <li><a href="#tariffs">Тарифы</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Контакты</a></li>
+      <li><a href="{{ telegram_link }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Telegram</a></li>
+    </ul>
+    <button type="button" class="nav-toggle" aria-label="Меню" id="navToggle"></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#benefits">Преимущества</a>
+    <a href="#process">Как получить</a>
+    <a href="#tariffs">Тарифы</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Контакты</a>
+    <a href="{{ telegram_link }}" target="_blank" rel="noopener" class="btn btn-primary">Telegram</a>
+  </div>
+</nav>
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+    </div>
+    <div class="container hero-inner">
+        <div class="hero-text scroll-reveal">
+            <h1 class="hero-title">Карта Visa от кыргызского банка — ваш ключ к мировым финансам</h1>
+            <p class="hero-subtitle">Выпуск за 5–7 дней, без доверенности, пополнение из России. Идентификация в офисе или с выездом специалиста.</p>
+            <div class="hero-price scroll-reveal">
+                <span class="hero-price-label">Услуга оформления</span>
+                <span class="hero-price-value">25 000 ₽</span>
+            </div>
+            <a href="{{ telegram_link }}" target="_blank" rel="noopener" class="btn btn-primary btn-telegram">
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                </span>
+                Оставить заявку в Telegram
+            </a>
+        </div>
+        <div class="hero-card-wrap scroll-reveal">
+            <div class="card-3d" id="card3d">
+                <div class="card-3d-inner">
+                    <div class="card-face card-front">
+                        <div class="card-chip"></div>
+                        <div class="card-logo visa-logo">Visa</div>
+                        <div class="card-number">•••• •••• •••• 4242</div>
+                        <div class="card-holder">CARD HOLDER</div>
+                        <div class="card-expiry">12/28</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-magstrip"></div>
+                        <div class="card-signature"></div>
+                        <div class="card-cvc">•••</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Листайте вниз</span>
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="section benefits" id="benefits">
+    <div class="container">
+        <h2 class="section-title scroll-reveal">Почему выбирают нас</h2>
+        <p class="section-subtitle scroll-reveal">Удобство, скорость и надёжность — без лишних формальностей</p>
+        <div class="benefits-grid">
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-clock">⏱</span></div>
+                <h3>Выпуск за 5–7 дней</h3>
+                <p>Карта изготавливается и доставляется в кратчайшие сроки без задержек.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-doc">📄</span></div>
+                <h3>Без доверенности</h3>
+                <p>Не требуется нотариальная доверенность для получения карты.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-id">🪪</span></div>
+                <h3>Два способа идентификации</h3>
+                <p>В офисе компании или выезд специалиста по вашему адресу.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-globe">🌍</span></div>
+                <h3>Работает по всему миру</h3>
+                <p>Карта принимается для оплаты в любой стране.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-in">💳</span></div>
+                <h3>Пополнение из России</h3>
+                <p>Пополнение карты возможно из любого российского банка.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-out">🏦</span></div>
+                <h3>Вывод на российские счета</h3>
+                <p>Вывод средств на любой российский банковский счёт.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-app">📱</span></div>
+                <h3>Мобильное приложение</h3>
+                <p>Собственное приложение для управления картой и операциями.</p>
+            </article>
+            <article class="benefit-card scroll-reveal">
+                <div class="benefit-icon"><span class="icon-curator">👤</span></div>
+                <h3>Персональный куратор</h3>
+                <p>Каждому клиенту назначается куратор для сопровождения.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="section process" id="process">
+    <div class="container">
+        <h2 class="section-title scroll-reveal">Как получить карту</h2>
+        <p class="section-subtitle scroll-reveal">Четыре простых шага от заявки до карты в руках</p>
+        <div class="process-steps">
+            <div class="process-step scroll-reveal">
+                <div class="step-num">1</div>
+                <div class="step-icon">✉️</div>
+                <h3>Оставьте заявку в Telegram</h3>
+                <p>Напишите менеджеру — мы ответим и уточним детали.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step scroll-reveal">
+                <div class="step-num">2</div>
+                <div class="step-icon">📍</div>
+                <h3>Выберите способ идентификации</h3>
+                <p>В офисе или с выездом специалиста к вам на адрес.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step scroll-reveal">
+                <div class="step-num">3</div>
+                <div class="step-icon">✅</div>
+                <h3>Пройдите идентификацию</h3>
+                <p>Предоставьте документы и подтвердите личность.</p>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step scroll-reveal">
+                <div class="step-num">4</div>
+                <div class="step-icon">🎉</div>
+                <h3>Получите карту через 5–7 дней</h3>
+                <p>Карта будет готова и доставлена в оговорённые сроки.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tariffs -->
+<section class="section tariffs" id="tariffs">
+    <div class="container">
+        <h2 class="section-title scroll-reveal">Тарифы и условия</h2>
+        <p class="section-subtitle scroll-reveal">Прозрачные условия обслуживания карты</p>
+        <div class="tariff-main scroll-reveal glass">
+            <div class="tariff-price-block">
+                <span class="tariff-price-label">Стоимость услуги оформления</span>
+                <span class="tariff-price-value">25 000 ₽</span>
+            </div>
+            <p class="tariff-price-note">Независимо от того, какую карту вы хотите — стоимость услуги не меняется.</p>
+        </div>
+        <div class="tariff-card-note scroll-reveal glass">
+            <h3>Вид карты</h3>
+            <p>Вид карты вы оплачиваете банку. Детальную информацию по картам и тарифам банка мы отправим после вашего обращения в Telegram.</p>
+        </div>
+        <div class="tariffs-grid scroll-reveal">
+            <div class="tariff-card glass">
+                <h3>Обслуживание карты</h3>
+                <p>Условия обслуживания карты уточняются при оформлении заявки в Telegram.</p>
+            </div>
+            <div class="tariff-card glass">
+                <h3>Пополнение</h3>
+                <p>Пополнение из любого российского банка. Комиссии зависят от выбранного тарифа.</p>
+            </div>
+            <div class="tariff-card glass">
+                <h3>Вывод средств</h3>
+                <p>Вывод на любой российский банковский счёт. Лимиты и комиссии — по тарифу.</p>
+            </div>
+        </div>
+        <p class="tariffs-note scroll-reveal">Точные тарифы и лимиты подбираются индивидуально. Напишите в Telegram — менеджер ответит на все вопросы.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+    <div class="container">
+        <h2 class="section-title scroll-reveal">Часто задаваемые вопросы</h2>
+        <div class="faq-list">
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq1" id="faq-q1">
+                    <span>Какие документы нужны для оформления?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq-q1">
+                    <p>Для оформления карты потребуется паспорт и заполнение анкеты. Точный перечень документов подскажет менеджер при обращении в Telegram.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq2" id="faq-q2">
+                    <span>Сколько времени занимает выпуск карты?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq-q2">
+                    <p>Карта выпускается в течение 5–7 рабочих дней после прохождения идентификации.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq3" id="faq-q3">
+                    <span>Какие способы идентификации доступны?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq-q3">
+                    <p>Идентификация проводится в офисе компании или с выездом специалиста по адресу клиента.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq4" id="faq-q4">
+                    <span>Как пополнить карту из России?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq-q4">
+                    <p>Пополнение возможно из любого российского банка по реквизитам, которые вы получите после оформления карты.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq5" id="faq-q5">
+                    <span>Какие комиссии при выводе средств?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq5" role="region" aria-labelledby="faq-q5">
+                    <p>Комиссии за вывод зависят от тарифа. Вывод доступен на любой российский банковский счёт. Детали уточняйте у менеджера в Telegram.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq6" id="faq-q6">
+                    <span>Работает ли карта за рубежом?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq6" role="region" aria-labelledby="faq-q6">
+                    <p>Да, карта Visa принимается для оплаты по всему миру.</p>
+                </div>
+            </div>
+            <div class="faq-item scroll-reveal glass">
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq7" id="faq-q7">
+                    <span>Есть ли мобильное приложение?</span>
+                    <span class="faq-toggle"></span>
+                </button>
+                <div class="faq-answer" id="faq7" role="region" aria-labelledby="faq-q7">
+                    <p>Да, компания предоставляет собственное мобильное приложение для управления картой и операциями.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <h2 class="section-title scroll-reveal">Свяжитесь с нами</h2>
+        <p class="section-subtitle scroll-reveal">Оставьте заявку в Telegram — менеджер ответит и проведёт через все шаги</p>
+        <div class="contact-cta scroll-reveal">
+            <a href="{{ telegram_link }}" target="_blank" rel="noopener" class="btn btn-primary btn-telegram btn-large">
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                </span>
+                Написать в Telegram
+            </a>
+            <p class="contact-link"><a href="{{ telegram_link }}" target="_blank" rel="noopener">t.me/eugenia_romanov</a></p>
+        </div>
+        <div class="contact-extra scroll-reveal">
+            <p>По желанию можно указать телефон или email в сообщении — мы перезвоним или ответим письмом.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© {% now "Y" %} Visa Card — карты от кыргызского банка. Оформление заявки через Telegram.</p>
+    </div>
+</footer>
+{% endblock %}
