@@ -135,7 +135,7 @@ img { max-width: 100%; height: auto; }
 }
 .hero-title {
   font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.15;
+  line-height: 1.2;
   margin: 0 0 20px;
   background: linear-gradient(135deg, #fff 0%, var(--accent-purple-light) 50%, var(--accent-gold) 100%);
   background-clip: text;
@@ -143,6 +143,11 @@ img { max-width: 100%; height: auto; }
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: gradient-shift 8s ease infinite;
+}
+.hero-title-line-1 { white-space: nowrap; }
+.hero-title-line-2 { display: inline; }
+@media (max-width: 640px) {
+  .hero-title-line-1 { white-space: normal; }
 }
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% center; }
@@ -153,6 +158,7 @@ img { max-width: 100%; height: auto; }
 .hero-subtitle-split { display: flex; flex-direction: column; gap: 10px; }
 .hero-subtitle-line { display: block; }
 .hero-subtitle-line-strong { color: var(--text-primary); font-weight: 600; }
+.hero-subtitle-caps { letter-spacing: 0.04em; color: var(--accent-gold); }
 @media (max-width: 900px) {
   .hero-subtitle-split { align-items: center; }
 }
@@ -357,6 +363,7 @@ img { max-width: 100%; height: auto; }
 }
 .benefit-card:hover .benefit-icon { transform: translateZ(24px) scale(1.08); }
 .benefit-card h3 { font-size: 1.15rem; margin: 0 0 8px; color: var(--text-primary); }
+.benefit-highlight { color: var(--accent-gold); letter-spacing: 0.03em; }
 .benefit-card p { margin: 0; font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
 .process-steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: stretch; perspective: 1000px; }
 .process-step {
@@ -443,6 +450,47 @@ img { max-width: 100%; height: auto; }
   50% { text-shadow: 0 0 60px rgba(245, 158, 11, 0.4); }
 }
 .tariff-price-note { margin: 0; font-size: 0.95rem; color: var(--text-muted); max-width: 520px; margin-left: auto; margin-right: auto; }
+.tariff-cards-block {
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+.tariff-cards-block:hover {
+  border-color: rgba(124, 58, 237, 0.45);
+  box-shadow: 0 12px 40px -12px rgba(124, 58, 237, 0.25);
+  transform: translateY(-2px);
+}
+.tariff-cards-block-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-purple), #5b21b6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+}
+.tariff-cards-block-title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.tariff-cards-block-text {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  width: 100%;
+}
 .tariff-card-note {
   padding: 24px 28px;
   margin-bottom: 24px;

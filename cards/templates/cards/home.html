@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Карта Visa от кыргызского банка — ваш ключ к мировым финансам{% endblock %}
+{% block title %}Visa из Кыргызстана — ключ к мировым финансам{% endblock %}
 
 {% block content %}
 <nav class="nav">
@@ -39,10 +39,16 @@
     </div>
     <div class="container hero-inner">
         <div class="hero-text scroll-reveal">
-            <h1 class="hero-title">Карта Visa от кыргызского банка<br>— ваш ключ к мировым финансам</h1>
+            <h1 class="hero-title">
+                <span class="hero-title-line-1">Visa из Кыргызстана</span><br>
+                <span class="hero-title-line-2">— ключ к мировым финансам</span>
+            </h1>
             <p class="hero-subtitle hero-subtitle-split">
-                <span class="hero-subtitle-line hero-subtitle-line-strong">Выпуск за 5–7 дней, без доверенности, пополнение из России.</span>
-                <span class="hero-subtitle-line">Идентификация в офисе или с выездом специалиста.</span>
+                <span class="hero-subtitle-line hero-subtitle-line-strong">
+                Выпуск за 5–7 дней<br>
+                <span class="hero-subtitle-caps">БЕЗ ДОВЕРЕННОСТИ</span><br>
+                <span class="hero-subtitle-caps">БЕСПЛАТНОЕ</span> пополнение из России
+            </span>
             </p>
             <div class="hero-price scroll-reveal">
                 <span class="hero-price-label">Стоимость оформления</span>
@@ -108,8 +114,8 @@
             </article>
             <article class="benefit-card scroll-reveal">
                 <div class="benefit-icon"><span class="icon-in">💳</span></div>
-                <h3>Пополнение из России</h3>
-                <p>Пополнение карты возможно из любого российского банка.</p>
+                <h3>Пополнение из России — <span class="benefit-highlight">БЕСПЛАТНО</span></h3>
+                <p>Пополняйте карту из любого банка России без комиссии.</p>
             </article>
             <article class="benefit-card scroll-reveal">
                 <div class="benefit-icon"><span class="icon-out">🏦</span></div>
@@ -140,21 +146,21 @@
                 <div class="step-num">1</div>
                 <div class="step-icon">✉️</div>
                 <h3>Оставьте заявку в Telegram</h3>
-                <p>Напишите менеджеру — мы ответим и уточним детали.</p>
+                <p>Наш менеджер проконсультирует вас, поможет с выбором карты и ответит на все вопросы.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step scroll-reveal">
                 <div class="step-num">2</div>
-                <div class="step-icon">📍</div>
-                <h3>Выберите способ идентификации</h3>
-                <p>В офисе или с выездом специалиста к вам на адрес.</p>
+                <div class="step-icon">✅</div>
+                <h3>Пройдите идентификацию</h3>
+                <p>Выберите удобный способ:<br>• приехать в офис<br>• или партнёр приедет к вам домой для подтверждения личности.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step scroll-reveal">
                 <div class="step-num">3</div>
-                <div class="step-icon">✅</div>
-                <h3>Пройдите идентификацию</h3>
-                <p>Предоставьте документы и подтвердите личность.</p>
+                <div class="step-icon">💳</div>
+                <h3>Оплата оформления</h3>
+                <p>После подтверждения данных проводится оплата за выпуск карты.</p>
             </div>
             <div class="process-connector"></div>
             <div class="process-step scroll-reveal">
@@ -179,29 +185,16 @@
             </div>
             <p class="tariff-price-note">Независимо от того, какую карту вы хотите — стоимость услуги не меняется.</p>
         </div>
-        <div class="tariff-card-note scroll-reveal glass">
-            <h3>Вид карты</h3>
-            <p>Вид карты вы оплачиваете банку. Детальную информацию по картам и тарифам банка мы отправим после вашего обращения в Telegram.</p>
+        <div class="tariff-cards-block scroll-reveal glass">
+            <div class="tariff-cards-block-icon" aria-hidden="true">💳</div>
+            <h3 class="tariff-cards-block-title">Какие карты можно выпустить?</h3>
+            <p class="tariff-cards-block-text">Можно оформить карту Visa стандартного или премиального уровня — стоимость выпуска остаётся одинаковой.</p>
         </div>
-        <div class="tariff-corp-note scroll-reveal glass">
-            <h3>Корпоративные скидки</h3>
-            <p>При заказе большого количества карт предоставляются специальные скидки. Размер скидки рассчитывается индивидуально в зависимости от объёма заказа.</p>
+        <div class="tariff-cards-block scroll-reveal glass">
+            <div class="tariff-cards-block-icon" aria-hidden="true">🏢</div>
+            <h3 class="tariff-cards-block-title">Есть ли скидки при заказе нескольких карт?</h3>
+            <p class="tariff-cards-block-text">При заказе большого количества карт предоставляются специальные скидки. Размер скидки рассчитывается индивидуально в зависимости от объёма заказа.</p>
         </div>
-        <div class="tariffs-grid scroll-reveal">
-            <div class="tariff-card glass">
-                <h3>Обслуживание карты</h3>
-                <p>Условия обслуживания карты уточняются при оформлении заявки в Telegram.</p>
-            </div>
-            <div class="tariff-card glass">
-                <h3>Пополнение</h3>
-                <p>Пополнение из любого российского банка. Комиссии зависят от выбранного тарифа.</p>
-            </div>
-            <div class="tariff-card glass">
-                <h3>Вывод средств</h3>
-                <p>Вывод на любой российский банковский счёт. Лимиты и комиссии — по тарифу.</p>
-            </div>
-        </div>
-        <p class="tariffs-note scroll-reveal">Точные тарифы и лимиты подбираются индивидуально. Напишите в Telegram — менеджер ответит на все вопросы.</p>
     </div>
 </section>
 
@@ -216,7 +209,7 @@
                     <span class="faq-toggle"></span>
                 </button>
                 <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq-q1">
-                    <p>Для оформления карты потребуется паспорт и заполнение анкеты. Точный перечень документов подскажет менеджер при обращении в Telegram.</p>
+                    <p>Для оформления карты потребуется паспорт и заполнение анкеты.</p>
                 </div>
             </div>
             <div class="faq-item scroll-reveal glass">
