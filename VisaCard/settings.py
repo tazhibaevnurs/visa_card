@@ -86,12 +86,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-# На Vercel собираем статику в public/static — Vercel раздаёт public/ с CDN.
-# Локально и для WhiteNoise используем staticfiles.
-if os.environ.get('VERCEL'):
-    STATIC_ROOT = BASE_DIR / 'public' / 'static'
-else:
-    STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Везде один каталог — WhiteNoise раздаёт статику из того же деплоя, что и Django.
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
