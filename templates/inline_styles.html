@@ -150,6 +150,12 @@ img { max-width: 100%; height: auto; }
 }
 .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 32px; max-width: 480px; }
 .hero-inner .hero-text:not(.scroll-reveal) .hero-subtitle { max-width: none; }
+.hero-subtitle-split { display: flex; flex-direction: column; gap: 10px; }
+.hero-subtitle-line { display: block; }
+.hero-subtitle-line-strong { color: var(--text-primary); font-weight: 600; }
+@media (max-width: 900px) {
+  .hero-subtitle-split { align-items: center; }
+}
 .hero-price {
   display: inline-flex;
   align-items: baseline;
