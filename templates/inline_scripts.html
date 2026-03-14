@@ -1,0 +1,102 @@
+{% comment %}Inlined JS so interactivity works when /static/ is not served (e.g. Vercel){% endcomment %}
+<script>
+(function () {
+  'use strict';
+  var card3d = document.getElementById('card3d');
+  if (card3d) {
+    var inner = card3d.querySelector('.card-3d-inner');
+    var rect = card3d.getBoundingClientRect();
+    var centerX = rect.left + rect.width / 2;
+    var centerY = rect.top + rect.height / 2;
+    function onMove(e) {
+      var x = (e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || 0) - centerX;
+      var y = (e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || 0) - centerY;
+      var rotateX = Math.max(-15, Math.min(15, -y / 8));
+      var rotateY = Math.max(-15, Math.min(15, x / 8));
+      inner.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    }
+    function onLeave() { inner.style.transform = 'rotateX(0) rotateY(0)'; }
+    card3d.addEventListener('mousemove', onMove);
+    card3d.addEventListener('mouseleave', onLeave);
+    card3d.addEventListener('touchmove', function (e) {
+      e.preventDefault();
+      rect = card3d.getBoundingClientRect();
+      centerX = rect.left + rect.width / 2;
+      centerY = rect.top + rect.height / 2;
+      onMove(e);
+    }, { passive: false });
+    card3d.addEventListener('touchend', onLeave);
+  }
+  function init3DTilt(selector) {
+    document.querySelectorAll(selector).forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var tiltX = Math.max(-6, Math.min(6, -y * 10));
+        var tiltY = Math.max(-6, Math.min(6, x * 10));
+        card.style.transform = 'perspective(900px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateY(-8px) scale(1.02)';
+      });
+      card.addEventListener('mouseleave', function () { card.style.transform = ''; });
+    });
+  }
+  init3DTilt('.benefit-card');
+  init3DTilt('.tariff-card');
+  var revealEls = document.querySelectorAll('.scroll-reveal, .benefit-card, .process-step, .tariff-card, .faq-item, .section-title, .section-subtitle');
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('revealed');
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+  revealEls.forEach(function (el) { observer.observe(el); });
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var targetId = btn.getAttribute('aria-controls');
+      var answer = document.getElementById(targetId);
+      faqQuestions.forEach(function (other) {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          var otherId = other.getAttribute('aria-controls');
+          var otherAnswer = document.getElementById(otherId);
+          if (otherAnswer) otherAnswer.style.maxHeight = null;
+        }
+      });
+      if (expanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        if (answer) answer.style.maxHeight = null;
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+  var navToggle = document.getElementById('navToggle');
+  var navMobile = document.getElementById('navMobile');
+  if (navToggle && navMobile) {
+    navToggle.addEventListener('click', function () {
+      var open = navMobile.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var id = this.getAttribute('href');
+      if (id === '#') return;
+      var target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (navMobile && navMobile.classList.contains('is-open')) {
+          navMobile.classList.remove('is-open');
+          if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+})();
+</script>
