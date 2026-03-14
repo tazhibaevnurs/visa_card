@@ -10,6 +10,7 @@ def home(request):
     )
     context = {
         'telegram_link': getattr(settings, 'TELEGRAM_LINK', 'https://t.me/eugenia_romanov'),
+        'instagram_link': getattr(settings, 'INSTAGRAM_LINK', 'https://instagram.com/visa_card_kg'),
         'title': 'Visa из Кыргызстана — ключ к мировым финансам',
         'meta_description': meta_description,
         'meta_keywords': 'Visa, карта Visa, Кыргызстан, банк, оформление карты, пополнение из России, заявка',
